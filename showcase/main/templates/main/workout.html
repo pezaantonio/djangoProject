@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{%block title%} Workout Journal {%endblock%}
+
+{% block content %}
+
+    <h1>{{w.name}}</h1>
+    <ul>
+        {% for item in w.workoutentry_set.all %}
+            <li>{{item.exerciseName}}</li>
+            <li>{{item.exerciseSet}}</li>
+            <li>{{item.exerciseReps}}</li>
+            <li>{{item.exerciseComment}}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

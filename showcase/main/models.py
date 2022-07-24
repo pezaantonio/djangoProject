@@ -11,10 +11,12 @@ class workoutList(models.Model):
 class workoutEntry(models.Model):
     # This variable identifies a foreign key to connect it to workoutEntry
     workout = models.ForeignKey(workoutList, on_delete=models.CASCADE)
-    workoutReps = models.CharField(max_length=2)
-    workoutComment = models.CharField(max_length=400)
+    exerciseName = models.CharField(default="default", max_length=40)
+    exerciseSets = models.CharField(default="0", max_length=4)
+    exerciseReps = models.CharField(default="0", max_length=4)
+    exerciseComment = models.CharField(max_length=400)
     # This is a boolean field to identify if the item is complete
     # complete = models.BooleanField()
     
     def __str__(self):
-        return self.workoutReps, self.workoutComment
+        return '%s %s %s %s' %(self.exerciseName, self.exerciseSets, self.exerciseReps, self.exerciseComment)

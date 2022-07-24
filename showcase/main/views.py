@@ -5,4 +5,8 @@ from .models import workoutList, workoutEntry
 # Create your views here.
 
 def index(response):
-    return HttpResponse("Hello world")
+    return render(response, "main/home.html")
+
+def workout(response):
+    w = workoutList.objects.get()
+    return render(response, "main/workout.html",{"w":w})
