@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class workoutList(models.Model):
     name = models.CharField(max_length=200)
-
+    # woDate = models.DateTimeField('Date of workout')
     def __str__(self):
         return self.name
 
