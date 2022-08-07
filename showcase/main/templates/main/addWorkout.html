@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Add workout {% endblock %}
+
+{% block content %}
+Add Workout
+<form method="post" action="/addworkout/">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit", name="save"> Add Workout </button>
+</form>
+
+{% endblock %}
