@@ -3,11 +3,15 @@
 {% block title %} Add workout {% endblock %}
 
 {% block content %}
-Add Workout
-<form method="post" action="/addworkout/">
+<h3> Add Workout </h3>
+<form method="post" action="/addworkout/" class="form-group">
     {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit", name="save"> Add Workout </button>
+    <div class="input-group mb-3"> 
+        <div>
+            {{form.as_p}}
+            <button type="submit", name="save", class="btn btn-success"> Add Workout </button>
+        </div>
+    </div>
 </form>
 
 {% endblock %}
