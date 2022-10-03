@@ -4,17 +4,19 @@
 
 {% block content %}
 
-    <div class="input-group mb-3"> 
-        <h3>{{w.name}}</h3>
-        <div>
-            <ul>
+<div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+        <div class="input-group mb-3"> 
+            <h1 class="w3-text-teal"> {{w.name}} </h1>
+            <div>
                 {% for item in w.workoutentry_set.all %}
-                    <h3>Exercise: <h3><li>{{item.exerciseName}}</li>
-                    <h3>Sets: <h3><li>{{item.exerciseSets}}</li>
-                    <h3>Reps: <h3><li>{{item.exerciseReps}}</li>
-                    <h3>Comment: <h3><li>{{item.exerciseComment}}</li>
+                    <p> Exercise: {{item.exerciseName}} </p>
+                    <p> Sets: {{item.exerciseSets}} </p>
+                    <p> Reps: {{item.exerciseReps}} </p>
+                    <p> Comment: {{item.exerciseComment}} </p>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
+</div>
 {% endblock %}

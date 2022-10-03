@@ -3,15 +3,21 @@
 {% block title %} Add workout {% endblock %}
 
 {% block content %}
-<h3> Add Workout </h3>
-<form method="post" action="/addworkout/" class="form-group">
-    {% csrf_token %}
-    <div class="input-group mb-3"> 
-        <div>
-            {{form.as_p}}
-            <button type="submit", name="save", class="btn btn-success"> Add Workout </button>
-        </div>
+
+<div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+        <h1 class="w3-text-teal"> Add Workout </h1>
+        <form method="post" action="/addworkout/" class="form-group">
+            {% csrf_token %}
+            <div class="input-group mb-3"> 
+                <div>
+                    {{form.as_p}}
+                    <button type="submit", name="save", class="btn btn-success"> Add Set </button>
+                </div>
+                    <p> <button type="submit", name="save", class="btn btn-success"> Save </button> </p>
+            </div>
+        </form>
     </div>
-</form>
+</div>
 
 {% endblock %}
