@@ -19,27 +19,5 @@
         </form>
     </div>
 </div>
-
-<form>
-    <p>
-        <label>Name:</label> <input type="text">
-        <label>Age:</label> <input type="text">
-        <span class="remove">Remove</span>
-    </p>
-    <p>
-        <span class="add">Add fields</span>
-    </p>
-</form>
-
-<script>
-    $(".add").click(function() {
-        $("form > p:first-child").clone(true).insertBefore("form > p:last-child");
-        return false;
-    });
-    
-    $(".remove").click(function() {
-        $(this).parent().remove();
-    });
-</script>
 {% endblock %}
 
