@@ -10,6 +10,7 @@
             <h1 class="w3-text-teal"> {{w.name}} </h1>
             <div>
                 {% for item in w.workoutentry_set.all %}
+                    <p> Date: {{item.exerciseDate}} </p>
                     <p> Exercise: {{item.exerciseName}} </p>
                     <p> Sets: {{item.exerciseSets}} </p>
                     <p> Reps: {{item.exerciseReps}} </p>

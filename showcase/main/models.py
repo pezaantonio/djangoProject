@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class workoutList(models.Model):
@@ -12,9 +13,10 @@ class workoutEntry(models.Model):
     # This variable identifies a foreign key to connect it to workoutEntry
     workout = models.ForeignKey(workoutList, on_delete=models.CASCADE)
     exerciseName = models.CharField(default="default", max_length=40)
-    exerciseSets = models.CharField(default="0", max_length=4)
-    exerciseReps = models.CharField(default="0", max_length=4)
+    exerciseSets = models.IntegerField(default="0")
+    exerciseReps = models.IntegerField(default="0")
     exerciseComment = models.CharField(max_length=400)
+    exerciseDate = models.DateField(default=timezone.now)
     # This is a boolean field to identify if the item is complete
     # complete = models.BooleanField()
     

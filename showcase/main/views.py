@@ -3,6 +3,7 @@ from django.core.exceptions import MultipleObjectsReturned
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import workoutList, workoutEntry
 from .forms import addExercise
+from django.utils.timezone import localdate, localtime, now
 
 # Create your views here.
 
@@ -22,7 +23,7 @@ def addWorkout(response):
         form = addExercise(response.POST)
 
         if form.is_valid():
-            n = form.cleaned_data["exerciseName"]
+            n = "Workout on " + str(localdate())
             wo = workoutList(name = n)
             wo.save()
 
